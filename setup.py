@@ -1,23 +1,26 @@
 from setuptools import setup
 import os
 
-version = "0.1.0"
+version = "0.9.0"
 
 
 def write_version():
-    with open(os.path.join("configoverload", "version.py"), 'w') as fp:
+    with open(os.path.join("configoverloader", "version.py"), 'w') as fp:
         fp.write("version='{VERSION}'".format(VERSION=version))
 
 
 write_version()
+readme = open('README.rst').read()
 
 setup(
-    name="configoverload",
-    version="version",
-    author="shinsuke.yokoyama",
-    author_email='',
-    description='help overload config files depends on env, role, node',
-    packages=['configoverload', ],
+    name="configoverloader",
+    version=version,
+    author="yokoshin",
+    author_email=os.environ.get('CONFIGOVERLOADER_EMAIL'),
+    url='https://bitbucket.org/yokoshin/configoverloader',
+    description='this help overloading config files depends on env, role, node',
+    long_description=readme,
+    packages=['configoverloader', ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',

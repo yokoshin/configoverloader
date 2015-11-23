@@ -1,5 +1,5 @@
 import unittest
-from configoverload.configloverloader import default_node_detector
+from configoverloader.configoverloader import default_node_detector
 
 
 class TestDefaultNodeDetector(unittest.TestCase):
